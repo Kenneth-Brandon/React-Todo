@@ -17,12 +17,10 @@ const list = [
 ];
 
 class App extends React.Component {
-  // you will need a place to store your state in this component.
   state = {
     todoList: list
   };
 
-  // design `App` to be the parent component of your application.
   addNewTodo = newTodoName => {
     const newState = {
       ...this.state,
@@ -34,7 +32,6 @@ class App extends React.Component {
     this.setState(newState);
   };
 
-  // this component is going to take care of state, and any change handlers you need to work with your state
   toggleCompleted = id => {
     const newState = {
       ...this.state,
