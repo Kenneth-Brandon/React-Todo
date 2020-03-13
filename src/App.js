@@ -42,8 +42,15 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // this.addLocalStorage();
+    this.addLocalStorage();
     window.addEventListener("beforeunload", this.saveLocalStorage.bind(this));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveLocalStorage.bind(this)
+    );
   }
 
   addNewTodo = newTodoName => {
