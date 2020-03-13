@@ -4,17 +4,19 @@ class TodoForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      newTodo: ""
+      newTodo: []
     };
   }
 
   handleChanges = event => {
+    console.log(this.handleChanges);
     this.setState({ ...this.state, newTodo: event.target.value });
   };
 
   handleSubmit = event => {
+    console.log(this.handleSubmit);
     event.preventDefault();
-    this.setState({ newTodo: "" });
+    this.setState({ newTodo: [] });
     this.props.addNewTodo(this.state.newTodo);
   };
 

@@ -21,6 +21,31 @@ class App extends React.Component {
     todoList: list
   };
 
+  addLocalStorage() {
+    for (let key in this.state) {
+      if (localStorage.hasOwnProperty(key)) {
+        let value = localStorage.getItem(key);
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch (event) {
+          this.setState({ [key]: value });
+        }
+      }
+    }
+  }
+
+  saveLocalStorage() {
+    for (let key in this.state) {
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
+
+  componentDidMount() {
+    // this.addLocalStorage();
+    window.addEventListener("beforeunload", this.saveLocalStorage.bind(this));
+  }
+
   addNewTodo = newTodoName => {
     const newState = {
       ...this.state,
