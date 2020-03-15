@@ -8,7 +8,6 @@ const StyledForm = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
-  margin-top: 20px;
   font-size: 3.5rem;
   font-family: "Sen", sans-serif;
   text-align: center;
@@ -23,11 +22,6 @@ const StyledInput = styled.input`
   font-family: "Sen", sans-serif;
   text-align: center;
   box-sizing: border-box;
-
-  &:placeholder {
-    color: #007da3;
-    opacity: 1;
-  }
 `;
 
 const Button = styled.button`
@@ -44,23 +38,23 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const TodoForm = props => {
+const SearchForm = props => {
   return (
     <StyledForm>
-      Add Items:
-      <form onSubmit={props.addListItem}>
+      Search the List:
+      <form onSubmit={props.searchItems}>
         <StyledInput
           type="text"
-          name="inputText"
-          placeholder="Are You New Here"
-          value={props.inputText}
+          name="searchText"
+          placeholder="Lost...Search Here"
+          value={props.searchText}
           onChange={props.handleChange}
         />
-        <Button type="submit">Add Item</Button>
-        <Button onClick={props.clearCompleted}>Clear Completed Items</Button>
+        <Button type="submit">Search</Button>
+        <Button onClick={props.clearSearch}>Clear Search</Button>
       </form>
     </StyledForm>
   );
 };
 
-export default TodoForm;
+export default SearchForm;
