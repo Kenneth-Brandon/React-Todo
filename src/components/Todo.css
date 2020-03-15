@@ -1,4 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+.list-item {
+  cursor: pointer;
+}
+
+.completed {
+  background-color: #8ae4ff;
+  text-decoration: line-through;
+}
+
+.hidden {
+  display: none;
+}
+
+.clear-btn {
+  margin: 10% 38%;
+}
+
 html,
 body {
   width: 100%;
@@ -21,67 +37,5 @@ div,
 p,
 span {
   color: white;
-  font-family: "Roboto", sans-serif;
-}
-
-.App {
-  font-family: sans-serif;
-  text-align: center;
-  padding: 100px 36px;
-  max-width: 665px;
-  margin: 0 auto;
-}
-
-.todo-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 100%;
-  margin: 0 auto;
-}
-.todo {
-  background-color: #007da3;
-  width: 45%;
-  text-align: left;
-  margin: 4px 0;
-  padding-left: 8px;
-  cursor: pointer;
-}
-
-.todo.completed {
-  background-color: #8ae4ff;
-  text-decoration: line-through;
-}
-
-form {
-  width: 50%;
-  margin: 10% 25%;
-}
-form > input {
-  background-color: #2d2d37;
-  border: 0;
-  padding: 6px 0;
-  font-size: 1rem;
-  width: 240px;
-  outline: 0;
-  color: white;
-  border-bottom: 1px solid #007da3;
-  margin-right: 8px;
-}
-
-button {
-  background-color: #007da3;
-  border: 1px solid #007da3;
-  color: white;
-  font-size: 16px;
-  padding: 6px 14px;
-}
-
-input::placeholder {
-  color: #007da3;
-  opacity: 1;
-}
-
-.clear-btn {
-  margin: 10% 38%;
+  font-family: "Sen", sans-serif;
 }

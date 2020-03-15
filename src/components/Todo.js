@@ -1,13 +1,26 @@
 import React from "react";
+import "./Todo.css";
+import styled from "styled-components";
 
+const Styledh1 = styled.h1`
+  font-family: "Sen", sans-serif;
+  background-color: #007da3;
+  width: 50%;
+  text-align: center;
+  margin: 4px 0;
+  padding-left: 8px;
+  cursor: pointer;
+`;
 const Todo = props => {
   return (
-    <div
-      onClick={event => props.toggleCompleted(props.todo.id)}
-      className={`todo${props.todo.completed ? " completed" : ""}`}
+    <Styledh1
+      onClick={() => props.markComplete(props.listItem.id)}
+      className={`list-item ${
+        props.listItem.completed ? "completed" : "incomplete"
+      } ${props.listItem.display ? "displayed" : "hidden"}`}
     >
-      <p>{props.todo.task}</p>
-    </div>
+      {props.listItem.listItem}
+    </Styledh1>
   );
 };
 
